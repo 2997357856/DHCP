@@ -29,7 +29,7 @@ public class ExecLinuxCommands {
         String password = "root";
         List<String> cmds = new ArrayList<>();
         cmds.add("ls -l");
-        cmds.add("lxc list | cut -d \"|\" -f 4 |awk '/\\./'");
+        cmds.add("mkdir MyDir");
         GetLinuxConnection GLC = new GetLinuxConnection();
         Session session = GLC.getJSchSession(ip,port,userName,password);
         ExecLinuxCommands ELC = new ExecLinuxCommands();

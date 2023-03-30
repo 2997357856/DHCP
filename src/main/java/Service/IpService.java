@@ -50,13 +50,13 @@ public class IpService {
         //第三步：处理查询的ip
         List<Ip> ipList = DHL.process(cmdResult);
         //第四步：将处理的ip存入数据库中
-        EMC.insertIpList(ipList);
+        EMC.insertIpList(ipList,"pools0");
         System.out.println("插入ip地址成功,共插入"+ipList.size()+"条");
         ipList.forEach(x-> System.out.println(x));
         //第五步：查询是否插入成功
-        List<Ip> ipResult = EMC.getIpList();
-        System.out.println("当前数据库ip共"+ipResult.size()+"条,展示如下");
-        ipResult.forEach(x-> System.out.println(x));
+        //List<Ip> ipResult = EMC.getIpList();
+        //System.out.println("当前数据库ip共"+ipResult.size()+"条,展示如下");
+        //ipResult.forEach(x-> System.out.println(x));
         //关闭连接对象
         GLC.closeJSchSession(session);
     }
